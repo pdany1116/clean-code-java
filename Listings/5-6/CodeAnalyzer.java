@@ -17,11 +17,15 @@ public class CodeAnalyzer implements JavaFileAnalysis {
 
   private static void findJavaFiles(File parentDirectory, List<File> files) {
     for (File file : parentDirectory.listFiles()) {
-      if (file.getName().endsWith(".java"))
+      if (isJavaFile(file))
         files.add(file);
       else if (file.isDirectory())
         findJavaFiles(file, files);
     }
+  }
+
+  private static void isJavaFile(File file) {
+    return file.getName().endsWith(".java");
   }
 
   public void analyzeFile(File javaFile) throws Exception {
