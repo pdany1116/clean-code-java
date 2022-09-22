@@ -81,14 +81,14 @@ public class CodeAnalyzer implements JavaFileAnalysis {
     throw new Error("Cannot get here");
   }
 
-  private int lineCountForWidth(int width) {
-    return lineWidthHistogram.getLinesforWidth(width).size();
-  }
-
   private Integer[] getSortedWidths() {
     Set<Integer> widths = lineWidthHistogram.getWidths();
     Integer[] sortedWidths = (widths.toArray(new Integer[0]));
     Arrays.sort(sortedWidths);
     return sortedWidths;
+  }
+
+  private int lineCountForWidth(int width) {
+    return lineWidthHistogram.getLinesforWidth(width).size();
   }
 }
