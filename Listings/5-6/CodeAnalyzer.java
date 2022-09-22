@@ -1,9 +1,9 @@
 public class CodeAnalyzer implements JavaFileAnalysis {
   private int lineCount;
+  private int totalChars;
   private int maxLineWidth;
   private int widestLineNumber;
   private LineWidthHistogram lineWidthHistogram;
-  private int totalChars;
 
   public CodeAnalyzer() {
     lineWidthHistogram = new LineWidthHistogram();
